@@ -1,0 +1,172 @@
+<title>The Hopper</title>
+<style>
+canvas {
+  border: 2px solid black;
+  backround-color: #87ceeb;
+}
+</style>
+</head>
+<body>
+<div>id-"canvas"</div>
+<body onload-"canvas">
+  <h1>The Hopper</h1>
+  <script>
+  alert('this game is not done. it is still in development by sebastian harkins')
+  var canvasWidth = 600;
+  var canvasHeight = 400;
+
+
+  function startGame() {
+    gameCanvas.start();
+  }
+  
+  var gameCanvas - {
+    canvas:document.createElement("canvas")
+    start: function() {
+    this.canvasWidth = canvasWidth;
+    this.canvasHeight = canvasHeight;
+    this.context = this.canvas.getContext("2d")
+    document.body.insertBefore(this.canvas, document.body.childNodes[0])
+  }
+}
+var player;
+var playerYPosition = 200;
+
+function startGame() {
+  gameCanvas.start();
+  player = new createPlayer(30, 30, 10);
+
+  ctx = gameCanvas.context;
+  ctx.fillStyle = "green";
+  ctx.fillRect(this.x, this.y, this.width, this.height)
+}
+
+var fallSpeed = 0;
+var interval = setInterval(updateCanvas, 20)
+
+function createPlayer(width, height, x) {
+  this.width = width;
+  this.height = height;
+  this.x = x;
+  this.y = playerYPostion;
+
+  this.draw = function() {
+    ctx = gameCanvas.context;
+    ctx.fillStyle = "green"
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+  this.makeFall = function() {
+    this.y += fallSpeed;
+    fallSpeed += 0.1;
+  }
+
+
+function updateCanvas() {
+  ctx = gameCanvas.context;
+  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+  player.makeFall();
+  player.draw();
+}
+
+this.makeFall = function() {
+  this.y += fallSpeed;
+  this.stopPlayer();
+
+}
+
+this.stopPlayer = function() {
+  var ground = canvasHeight - this.height;
+  if (this.y > ground){
+    this.y = ground;
+  }
+}
+}
+var isJumping = false;
+var jumpSpeed = 0;
+
+
+var block;
+ function startGame() {
+   gameCanvas.start();
+player = new createPlayer(30, 30, 10);
+block = new createBlock();
+ }
+
+ this.attackPlayer = function() {
+   this.x -= speed;
+ }
+ this.returnToAttackPosition();
+
+
+ this.returnToAttackPosition = function() {
+   if (this.x < 0) {
+     width = randomNumber(10, 50);
+     height = randomNumber(50, 200);
+     speed = randomNumber(4, 6);
+     this.y = canvasHeight - height;
+     this.x = canvasWidth;
+   }
+ }
+ 
+
+ function detectCollision() {
+   var playerLeft = player.x;
+   var playerRight = player.x + player.width;
+   var blockLeft = block.x;
+   var blockRight = block.x + block.width;
+
+
+   var playerBottom = player.y + player.height;
+   var blockTop = blockTop = block.y
+
+
+   if (playerRight > blockLeft &&
+   playerLeft < blockLeft &&
+   blayerBottom > blockTop) {
+     gameCanvas.stop();
+   }
+ }
+ function updateCanvas() {
+   detectCollision();
+
+
+   ctx =gameCanvas.context;
+   ctx.clearRect(0, 0, canvasWidth, canvsaHeight);
+
+
+   player.makeFall();
+   player.draw();
+   player.jump();
+
+
+   block.draw();
+   block.attackPlayer();
+ }
+
+ var score = 0;
+
+ var scoreLabel;
+
+
+ function startGame() {
+   gameCanvas.startGame();
+   player = new createPlayer(30, 30, 10);
+   block = new createBlock();
+
+   scoreLabel = createScoreLabel(10, 30);
+ }
+
+ function createScoreLabel(x, y) {
+   this.score = 0;
+   this.x = x;
+   this.y = y;
+   this.draw = function() {
+     ctx = gameCanvas.context;
+     ctx.font = "25px Marker Felt";
+     ctx.fillStyle = "black";
+     ctx.fillText(this.text, this.x, this.y)
+   }
+ }
+  </script>
+</body>
